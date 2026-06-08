@@ -1,0 +1,66 @@
+/* ==========================================================================
+   IMPORTAÇÃO DE FONTE EXTERNA
+   ========================================================================== */
+/* Importa a fonte Raleway do Google Fonts com os pesos 400 (normal), 500 (médio) e 800 (negrito extra) */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,800');
+
+/* ==========================================================================
+   ESTILIZAÇÃO DO BODY (CORPO DA PÁGINA)
+   ========================================================================== */
+body {
+    margin: 0;                   /* Remove todas as margens padrão do navegador */
+    height: 100vh;               /* Altura = 100% da altura da tela (viewport) */
+    background: #333;            /* Cor de fundo cinza escuro */
+    display: flex;               /* Ativa o Flexbox para facilitar o alinhamento */
+    justify-content: center;     /* Centraliza o conteúdo HORIZONTALMENTE */
+    align-items: center;         /* Centraliza o conteúdo VERTICALMENTE */
+    font-family: consolas;       /* Define a fonte monoespaçada Consolas como padrão */
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL DO CARD
+   ========================================================================== */
+.card {
+    position: relative;          /* Permite que elementos filhos absolutos se posicionem em relação a este container */
+    cursor: pointer;             /* Muda o cursor para "mãozinha" indicando que é clicável/interativo */
+    width: 300px;                /* Largura fixa de 300 pixels */
+}
+
+/* ==========================================================================
+   FACE 1 - PARTE DA FRENTE DO CARD (COM A IMAGEM E TÍTULO)
+   ========================================================================== */
+.face1 {
+    position: relative;          /* Posicionamento relativo para ajustes finos */
+    width: 300px;                /* Mesma largura do card pai */
+    height: 200px;               /* Altura fixa de 200 pixels */
+    background-color: #333;      /* Fundo cinza escuro (mesmo do body) */
+    display: flex;               /* Ativa Flexbox para organizar o conteúdo interno */
+    flex-direction: column;      /* Organiza os filhos em COLUNA (um embaixo do outro) */
+    justify-content: center;     /* Centraliza os filhos VERTICALMENTE */
+    align-items: center;         /* Centraliza os filhos HORIZONTALMENTE */
+    transition: 0.5s;            /* Animação suave de 0.5 segundos para TODAS as propriedades que mudarem */
+    transform: translateY(100px);/* POSIÇÃO INICIAL: desloca a face 100 pixels para BAIXO */
+    z-index: 1;                  /* Define que esta face fica ACIMA da face2 (valor maior = mais à frente) */
+}
+
+/* EFREITO HOVER: quando o mouse passa sobre o card, a face1 se comporta assim: */
+.card:hover .face1 {
+    background-color: #ff0057;   /* Muda a cor de fundo para ROSA / VERMELHO VIBRANTE */
+    transform: translateY(0);    /* Remove o deslocamento, trazendo a face para a POSIÇÃO ORIGINAL (encostando na face2) */
+}
+
+/* ==========================================================================
+   FACE 2 - PARTE DE TRÁS DO CARD (COM O TEXTO E BOTÃO)
+   ========================================================================== */
+.face2 {
+    position: relative;          /* Posicionamento relativo */
+    width: 300px;                /* Mesma largura do card */
+    height: 200px;               /* Mesma altura da face1 */
+    background-color: white;     /* Fundo branco (contraste com a face1 escura) */
+    display: flex;               /* Ativa Flexbox */
+    flex-direction: column;      /* Organiza o conteúdo em coluna */
+    justify-content: center;     /* Centraliza o conteúdo verticalmente */
+    align-items: center;         /* Centraliza o conteúdo horizontalmente */
+    /* box-sizing: border-box;      /* Inclui padding e border  */
+}
+    
